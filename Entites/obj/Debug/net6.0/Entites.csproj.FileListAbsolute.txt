@@ -1,0 +1,14 @@
+C:\Users\pawan\Desktop\Asp.net core\Entites\bin\Debug\net6.0\Entites.deps.json
+C:\Users\pawan\Desktop\Asp.net core\Entites\bin\Debug\net6.0\Entites.runtimeconfig.json
+C:\Users\pawan\Desktop\Asp.net core\Entites\bin\Debug\net6.0\Entites.dll
+C:\Users\pawan\Desktop\Asp.net core\Entites\bin\Debug\net6.0\Entites.pdb
+C:\Users\pawan\Desktop\Asp.net core\Entites\obj\Debug\net6.0\Entites.csproj.AssemblyReference.cache
+C:\Users\pawan\Desktop\Asp.net core\Entites\obj\Debug\net6.0\Entites.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pawan\Desktop\Asp.net core\Entites\obj\Debug\net6.0\Entites.AssemblyInfoInputs.cache
+C:\Users\pawan\Desktop\Asp.net core\Entites\obj\Debug\net6.0\Entites.AssemblyInfo.cs
+C:\Users\pawan\Desktop\Asp.net core\Entites\obj\Debug\net6.0\Entites.csproj.CoreCompileInputs.cache
+C:\Users\pawan\Desktop\Asp.net core\Entites\obj\Debug\net6.0\Entites.dll
+C:\Users\pawan\Desktop\Asp.net core\Entites\obj\Debug\net6.0\refint\Entites.dll
+C:\Users\pawan\Desktop\Asp.net core\Entites\obj\Debug\net6.0\Entites.pdb
+C:\Users\pawan\Desktop\Asp.net core\Entites\obj\Debug\net6.0\Entites.genruntimeconfig.cache
+C:\Users\pawan\Desktop\Asp.net core\Entites\obj\Debug\net6.0\ref\Entites.dll

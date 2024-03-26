@@ -13,3 +13,5 @@ C:\Users\pawan\Desktop\Asp.net core\LoggerService\obj\Debug\net6.0\LoggerService
 C:\Users\pawan\Desktop\Asp.net core\LoggerService\obj\Debug\net6.0\refint\LoggerService.dll
 C:\Users\pawan\Desktop\Asp.net core\LoggerService\obj\Debug\net6.0\LoggerService.pdb
 C:\Users\pawan\Desktop\Asp.net core\LoggerService\obj\Debug\net6.0\ref\LoggerService.dll
+C:\Users\pawan\Desktop\Asp.net core\LoggerService\bin\Debug\net6.0\LoggerService.runtimeconfig.json
+C:\Users\pawan\Desktop\Asp.net core\LoggerService\obj\Debug\net6.0\LoggerService.genruntimeconfig.cache
