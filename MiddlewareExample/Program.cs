@@ -39,6 +39,8 @@ app.Map("/usingmapbranch", builder =>
         await context.Response.WriteAsync("Hii from Middleware component. ");
     });
 });
+
+//Map and whenMap
 app.MapControllers();
 
 app.Run();
