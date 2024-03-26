@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Contracts
 {
-    internal interface ICompanyRepository
+    public interface ICompanyRepository
     {
     }
 }
