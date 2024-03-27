@@ -1737,10 +1737,15 @@
       },
       "Service.Contracts/1.0.0": {
         "dependencies": {
-          "Entites": "1.0.0"
+          "Shared": "1.0.0"
         },
         "runtime": {
           "Service.Contracts.dll": {}
+        }
+      },
+      "Shared/1.0.0": {
+        "runtime": {
+          "Shared.dll": {}
         }
       }
     }
@@ -3091,6 +3096,11 @@
       "sha512": ""
     },
     "Service.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

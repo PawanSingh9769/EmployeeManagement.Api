@@ -1,4 +1,5 @@
-﻿using Entites.Models;
+﻿
+using Shared.DataTransferObject_DTO_;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace Service.Contracts
 {
     public interface ICompanyService
     {
-        IEnumerable<Company> GetAllCompanies(bool trackChanges);
+        //IEnumerable<Company> GetAllCompanies(bool trackChanges); removing the entity connection and connecting with DTO
+        IEnumerable<CompanyDto> GetAllCompanies(bool trackChanges);
     }
 }

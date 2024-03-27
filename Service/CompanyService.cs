@@ -1,6 +1,7 @@
 ﻿using Contracts;
 using Entites.Models;
 using Service.Contracts;
+using Shared.DataTransferObject_DTO_;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,12 +23,14 @@ namespace Service
        /* We are using our repository manager to call the GetAllCompanies
          method from the CompanyRepository class and return all the companies
          from the database.*/
-        public IEnumerable<Company> GetAllCompanies(bool trackChanges)
+        public IEnumerable<CompanyDto> GetAllCompanies(bool trackChanges)
         {
             try
             {
                 var companies = _repository.Company.GetAllCompanies(trackChanges);
-                return companies;
+
+                var companiesDTO = companies.Select(c => new CompanyDto(c.Id,c.Name ??" ",string.Join(' ',c.Address , c.Country))).ToList();
+                return companiesDTO;
             }
             catch (Exception ex)
             {
