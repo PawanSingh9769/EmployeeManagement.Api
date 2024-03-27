@@ -21,16 +21,11 @@ namespace CompanyEmployees.Presentation.Controllers
         [HttpGet]                                          //decorating GetCompanies action with HTTP Get attribute
         public IActionResult GetCompanies()               // IActionResult which return not only the result but also status code
         {
-            try
-            {
-                //we use injected service to call the service method that gets the data from repository clas
-                var companies = _services.CompanyService.GetAllCompanies(trackChanges: false); 
-                return Ok(companies);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Internal Server Error");
-            }
+
+            throw new Exception("Exception");
+            //we use injected service to call the service method that gets the data from repository clas
+            var companies = _services.CompanyService.GetAllCompanies(trackChanges: false);
+            return Ok(companies);
         }
     }
 }

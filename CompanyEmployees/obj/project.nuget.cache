@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "9VMDoEG5Qr8dsJzEyC5LhI94HRmXReyvl8IYFBjRCBERGUou8ZBPVh8fWchQ7dW/iq+p3koRJ9gWUxuzkqeK+Q==",
+  "dgSpecHash": "fCacS44dflhjOxI2ZE0NxwAuOsyP6ev8p4JzGAw1JapQ9cApUvJCDg/vxVSV5P8YpfNPQhbLbd5fLWhL1ipA9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\pawan\\Desktop\\Asp.net core\\CompanyEmployees\\CompanyEmployees.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pawan\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
+    "C:\\Users\\pawan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.0.0\\automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\pawan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\pawan\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\pawan\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

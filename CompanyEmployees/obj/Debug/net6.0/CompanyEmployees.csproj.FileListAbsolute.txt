@@ -89,3 +89,5 @@ C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Service.Co
 C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\obj\Debug\net6.0\CompanyEmployees.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Shared.dll
 C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Shared.pdb
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

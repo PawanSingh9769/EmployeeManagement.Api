@@ -1,4 +1,5 @@
-﻿using Contracts;
+﻿using AutoMapper;
+using Contracts;
 using Entites.Models;
 using Service.Contracts;
 using Shared.DataTransferObject_DTO_;
@@ -14,10 +15,12 @@ namespace Service
     {
         private readonly IRepositoryManager _repository;
         private readonly ILoggerManager _logger;
-        public CompanyService(IRepositoryManager repository, ILoggerManager logger) //injecting IRepository and Ilogger interface
+        private readonly IMapper _mapper;
+        public CompanyService(IRepositoryManager repository, ILoggerManager logger, IMapper mapper) //injecting IRepository and Ilogger interface
         {
             _repository = repository; // to access the repository method from each user (companyrepo or Employee repo)
             _logger = logger; // to access logging method 
+            _mapper = mapper;
         }
 
        /* We are using our repository manager to call the GetAllCompanies
@@ -25,18 +28,16 @@ namespace Service
          from the database.*/
         public IEnumerable<CompanyDto> GetAllCompanies(bool trackChanges)
         {
-            try
-            {
-                var companies = _repository.Company.GetAllCompanies(trackChanges);
+            //Manually mapping 
+            //var companiesDto = companies.Select(c =>  
+            // new CompanyDto(c.Id, c.Name ?? "", string.Join(' ',
+            // c.Address, c.Country))) .ToList();
 
-                var companiesDTO = companies.Select(c => new CompanyDto(c.Id,c.Name ??" ",string.Join(' ',c.Address , c.Country))).ToList();
-                return companiesDTO;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Something went wrong in the{nameof(GetAllCompanies)} service method {ex}");
-                throw;
-            }
+            //Automatic mapping using auto mapper
+            var companies = _repository.Company.GetAllCompanies(trackChanges);
+            var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);
+            return companiesDto;
+
         }
     }
 }
