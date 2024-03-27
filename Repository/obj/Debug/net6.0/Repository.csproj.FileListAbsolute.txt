@@ -15,3 +15,5 @@ C:\Users\pawan\Desktop\Asp.net core\Repository\obj\Debug\net6.0\refint\Repositor
 C:\Users\pawan\Desktop\Asp.net core\Repository\obj\Debug\net6.0\Repository.pdb
 C:\Users\pawan\Desktop\Asp.net core\Repository\obj\Debug\net6.0\Repository.genruntimeconfig.cache
 C:\Users\pawan\Desktop\Asp.net core\Repository\obj\Debug\net6.0\ref\Repository.dll
+C:\Users\pawan\Desktop\Asp.net core\Repository\bin\Debug\net6.0\Contracts.dll
+C:\Users\pawan\Desktop\Asp.net core\Repository\bin\Debug\net6.0\Contracts.pdb

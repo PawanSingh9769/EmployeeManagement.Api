@@ -507,10 +507,19 @@
       },
       "Contracts/1.0.0": {
         "dependencies": {
+          "Entites": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
         },
         "runtime": {
           "Contracts.dll": {}
+        }
+      },
+      "Entites/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
+        },
+        "runtime": {
+          "Entites.dll": {}
         }
       }
     }
@@ -837,6 +846,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Entites/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

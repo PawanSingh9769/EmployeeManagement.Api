@@ -1,4 +1,5 @@
 using CompanyEmployees.Extensions;
+using Microsoft.AspNetCore.Routing;
 using NLog;
 using NLog.Config;
 
@@ -16,6 +17,11 @@ builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureSqlContext(builder.Configuration);
 
+//Without this code, our API wouldn’t work, and wouldn’t know where to 
+//route incoming requests. But now, our app will find all of the controllers 
+builder.Services.AddControllers().AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly); 
+//inside of the Presentation project and configure them with the 
+//framework.
 
 builder.Services.AddControllers();
 

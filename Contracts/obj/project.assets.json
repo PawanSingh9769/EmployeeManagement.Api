@@ -779,6 +779,19 @@
             "rid": "win"
           }
         }
+      },
+      "Entites/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Entites.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entites.dll": {}
+        }
       }
     }
   },
@@ -1998,10 +2011,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Entites/1.0.0": {
+      "type": "project",
+      "path": "../Entites/Entites.csproj",
+      "msbuildProject": "../Entites/Entites.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Entites >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.0"
     ]
@@ -2032,7 +2051,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\pawan\\Desktop\\Asp.net core\\Entites\\Entites.csproj": {
+              "projectPath": "C:\\Users\\pawan\\Desktop\\Asp.net core\\Entites\\Entites.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,0 +1,15 @@
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\bin\Debug\net6.0\Service.Contracts.deps.json
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\bin\Debug\net6.0\Service.Contracts.dll
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\bin\Debug\net6.0\Service.Contracts.pdb
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\bin\Debug\net6.0\Entites.dll
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\bin\Debug\net6.0\Entites.pdb
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\obj\Debug\net6.0\Service.Contracts.csproj.AssemblyReference.cache
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\obj\Debug\net6.0\Service.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\obj\Debug\net6.0\Service.Contracts.AssemblyInfoInputs.cache
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\obj\Debug\net6.0\Service.Contracts.AssemblyInfo.cs
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\obj\Debug\net6.0\Service.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\obj\Debug\net6.0\Service.Contracts.csproj.CopyComplete
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\obj\Debug\net6.0\Service.Contracts.dll
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\obj\Debug\net6.0\refint\Service.Contracts.dll
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\obj\Debug\net6.0\Service.Contracts.pdb
+C:\Users\pawan\Desktop\Asp.net core\Service.Contracts\obj\Debug\net6.0\ref\Service.Contracts.dll

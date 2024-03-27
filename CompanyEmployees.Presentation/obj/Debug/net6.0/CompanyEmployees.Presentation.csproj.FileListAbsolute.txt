@@ -1,0 +1,17 @@
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\bin\Debug\net6.0\CompanyEmployees.Presentation.deps.json
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\bin\Debug\net6.0\CompanyEmployees.Presentation.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\bin\Debug\net6.0\CompanyEmployees.Presentation.pdb
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\bin\Debug\net6.0\Entites.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\bin\Debug\net6.0\Service.Contracts.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\bin\Debug\net6.0\Service.Contracts.pdb
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\bin\Debug\net6.0\Entites.pdb
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\obj\Debug\net6.0\CompanyEmployees.Presentation.csproj.AssemblyReference.cache
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\obj\Debug\net6.0\CompanyEmployees.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\obj\Debug\net6.0\CompanyEmployees.Presentation.AssemblyInfoInputs.cache
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\obj\Debug\net6.0\CompanyEmployees.Presentation.AssemblyInfo.cs
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\obj\Debug\net6.0\CompanyEmployees.Presentation.csproj.CoreCompileInputs.cache
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\obj\Debug\net6.0\CompanyEmployees.Presentation.csproj.CopyComplete
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\obj\Debug\net6.0\CompanyEmployees.Presentation.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\obj\Debug\net6.0\refint\CompanyEmployees.Presentation.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\obj\Debug\net6.0\CompanyEmployees.Presentation.pdb
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees.Presentation\obj\Debug\net6.0\ref\CompanyEmployees.Presentation.dll

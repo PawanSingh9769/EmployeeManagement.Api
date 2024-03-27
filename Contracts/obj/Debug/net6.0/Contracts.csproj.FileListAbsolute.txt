@@ -12,3 +12,6 @@ C:\Users\pawan\Desktop\Asp.net core\Contracts\obj\Debug\net6.0\Contracts.pdb
 C:\Users\pawan\Desktop\Asp.net core\Contracts\obj\Debug\net6.0\ref\Contracts.dll
 C:\Users\pawan\Desktop\Asp.net core\Contracts\bin\Debug\net6.0\Contracts.runtimeconfig.json
 C:\Users\pawan\Desktop\Asp.net core\Contracts\obj\Debug\net6.0\Contracts.genruntimeconfig.cache
+C:\Users\pawan\Desktop\Asp.net core\Contracts\bin\Debug\net6.0\Entites.dll
+C:\Users\pawan\Desktop\Asp.net core\Contracts\bin\Debug\net6.0\Entites.pdb
+C:\Users\pawan\Desktop\Asp.net core\Contracts\obj\Debug\net6.0\Contracts.csproj.CopyComplete
