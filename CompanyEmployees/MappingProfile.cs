@@ -19,6 +19,9 @@ namespace CompanyEmployees
 
             //Mapping rule for Company creation
             CreateMap<CompanyForCreationDto, Company>();
+
+            //Mapping rule for employee creation
+            CreateMap<EmployeeForCreationDto, Employee>();
         }
     }
 }

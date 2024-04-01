@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
+using Shared.DataTransferObject_DTO_;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace CompanyEmployees.Presentation.Controllers
         }
 
 
-        [HttpGet("{id:guid}")]
+        [HttpGet("{id:guid}", Name = "GetEmployeeForCompany")]
         public IActionResult GetEmployee(Guid companyId , Guid Id)
         {
             var employee = _serviceManager.EmployeeService.GetEmployee(companyId, Id, trackChanges: false)
@@ -43,5 +44,26 @@ namespace CompanyEmployees.Presentation.Controllers
 
 
         }
+
+        [HttpPost]
+        public IActionResult CreateEmployeeForCompany(Guid companyId, [FromBody] EmployeeForCreationDto employee)
+
+        {
+            if (employee is null)
+                return BadRequest("EmployeeForCreationDto object is null");
+
+            var employeeToReturn =
+           _serviceManager.EmployeeService.CreateEmployeeForCompany(companyId, employee, trackChanges: false);
+
+
+            return CreatedAtRoute("GetEmployeeForCompany", new
+            {
+                companyId,
+                id = employeeToReturn.Id
+
+            },
+             employeeToReturn);
+        }
+
     }
 }
