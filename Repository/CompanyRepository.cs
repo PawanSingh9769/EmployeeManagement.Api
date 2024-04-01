@@ -24,6 +24,8 @@ namespace Repository
 
         public Company GetCompany(Guid ComapnyId, bool trackChanges) => FindByCondition(c => c.Id == ComapnyId, trackChanges).SingleOrDefault();
 
+        //logic to create company
+        public void CreateCompany(Company company) => Create(company);
        
     }
 }

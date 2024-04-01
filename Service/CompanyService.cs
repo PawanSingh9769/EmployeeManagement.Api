@@ -12,6 +12,16 @@ using System.Threading.Tasks;
 
 namespace Service
 {
+    /*****************************************************************************************************
+     * 
+     *  
+     * 
+     * The CompanyService class implements the ICompanyService interface and handles business logic specific to company-related operations.
+     * It may use a Mapper to convert between entities and DTOs.
+     * 
+     * 
+     *****************************************************************************************************/
+
     internal sealed class CompanyService : ICompanyService // inheriting the IService class 
     {
         private readonly IRepositoryManager _repository;
@@ -24,9 +34,11 @@ namespace Service
             _mapper = mapper;
         }
 
-       /* We are using our repository manager to call the GetAllCompanies
-         method from the CompanyRepository class and return all the companies
-         from the database.*/
+        
+
+        /* We are using our repository manager to call the GetAllCompanies
+          method from the CompanyRepository class and return all the companies
+          from the database.*/
         public IEnumerable<CompanyDto> GetAllCompanies(bool trackChanges)
         {
             //Manually mapping 
@@ -53,6 +65,24 @@ namespace Service
 
             var companyDto = _mapper.Map<CompanyDto>(company);
             return companyDto;
+        }
+
+
+        public CompanyDto CreateCompany(CompanyForCreationDto company)
+        {
+            /*
+             *        Here, we map the company for creation to the company entity, call the 
+                      repository method for creation, and call the Save() method to save the 
+                      entity to the database. After that, we map the company entity to the 
+                      company DTO object to return it to the controller. 
+             * 
+             */
+            var companyEntity = _mapper.Map<Company>(company);
+            _repository.Company.CreateCompany(companyEntity);
+            _repository.Save();
+            var companyToReturn = _mapper.Map<CompanyDto>(companyEntity);
+            return companyToReturn;
+
         }
     }
 }
