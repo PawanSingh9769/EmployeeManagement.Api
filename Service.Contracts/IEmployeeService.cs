@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared.DataTransferObject_DTO_;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace Service.Contracts
 {
     public interface IEmployeeService
     {
+        IEnumerable<EmployeeDto> GetEmployees(Guid Id, bool trackChnages);
     }
 }

@@ -12,6 +12,7 @@ namespace CompanyEmployees
            // CreateMap<Company, CompanyDto>().DisableCtorValidation().ForCtorParam("fullAddress", opt => opt.MapFrom(x => string.Join("", x.Address, x.Country)));
             CreateMap<Company, CompanyDto>()
                .ConstructUsing((src, ctx) => new CompanyDto(src.Id, src.Name, $"{src.Address} {src.Country}"));
+            CreateMap<Employee, EmployeeDto>();
         }
     }
 }
