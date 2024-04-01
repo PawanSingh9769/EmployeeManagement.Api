@@ -14,7 +14,16 @@ namespace Repository
         {
         }
 
+        //logic to extract all the comapnies list
         public IEnumerable<Company> GetAllCompanies(bool trackChanges) => FindAll(trackChanges).OrderBy(c => c.Name).ToList();
-        
+
+
+
+
+        //logic to get the company using ID
+
+        public Company GetCompany(Guid ComapnyId, bool trackChanges) => FindByCondition(c => c.Id == ComapnyId, trackChanges).SingleOrDefault();
+
+       
     }
 }

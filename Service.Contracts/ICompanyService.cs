@@ -12,5 +12,7 @@ namespace Service.Contracts
     {
         //IEnumerable<Company> GetAllCompanies(bool trackChanges); removing the entity connection and connecting with DTO
         IEnumerable<CompanyDto> GetAllCompanies(bool trackChanges);
+
+        CompanyDto GetCompany(Guid CompanyId, bool trackChanges);
     }
 }

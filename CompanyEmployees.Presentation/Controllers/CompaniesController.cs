@@ -22,10 +22,17 @@ namespace CompanyEmployees.Presentation.Controllers
         public IActionResult GetCompanies()               // IActionResult which return not only the result but also status code
         {
 
-            throw new Exception("Exception");
+            //throw new Exception("Exception");
             //we use injected service to call the service method that gets the data from repository clas
             var companies = _services.CompanyService.GetAllCompanies(trackChanges: false);
             return Ok(companies);
+        }
+
+        [HttpGet("{id:guid}")]
+        public IActionResult getCompany(Guid id)
+        {
+            var company = _services.CompanyService.GetCompany(id,trackChanges: false);
+            return Ok(company);
         }
     }
 }
