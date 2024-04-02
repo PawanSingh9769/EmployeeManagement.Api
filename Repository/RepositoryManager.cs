@@ -32,6 +32,8 @@ namespace Repository
         // Property to access the lazy-loaded Employee repository
         public IEmployeeRepository Employee => _employeeRepository.Value;
 
+       // IEmployeeRepository IRepositoryManager.Employee => throw new NotImplementedException();
+
         // Save method to persist changes to the database using the RepositoryContext
         public void Save() => _repositoryContext.SaveChanges();
     }
