@@ -30,6 +30,8 @@ namespace Repository
         //logic to get companybyids?????
         public IEnumerable<Company> GetByids(IEnumerable<Guid> ids, bool trackChanges) => FindByCondition(x => ids.Contains(x.Id), trackChanges).ToList();
 
+        
+
        
     }
 }

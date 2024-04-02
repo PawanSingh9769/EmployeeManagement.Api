@@ -13,5 +13,6 @@ namespace Contracts
         Employee GetEmployee(Guid CompanyId,Guid Id, bool trackChanges);
 
         void CreateEmployeeForCompany(Guid companyId, Employee employee);
+        void DeleteEmployee(Employee employee);
     }
 }
