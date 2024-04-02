@@ -16,5 +16,12 @@ namespace Service.Contracts
         CompanyDto GetCompany(Guid CompanyId, bool trackChanges);
 
         CompanyDto CreateCompany(CompanyForCreationDto Company);
+
+        IEnumerable<CompanyDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
+
+
+        //new method will accept the collection of companyForCreatingDto type as parameter 
+        //return a tuple with two field as a result.
+        (IEnumerable<CompanyDto> companies, string ids) CreateCompanyCollection(IEnumerable<CompanyForCreationDto> companyCollection);
     }
 }

@@ -26,6 +26,10 @@ namespace Repository
 
         //logic to create company
         public void CreateCompany(Company company) => Create(company);
+
+        //logic to get companybyids?????
+        public IEnumerable<Company> GetByids(IEnumerable<Guid> ids, bool trackChanges) => FindByCondition(x => ids.Contains(x.Id), trackChanges).ToList();
+
        
     }
 }

@@ -15,5 +15,9 @@ namespace Contracts
 
         void CreateCompany(Company company);
 
+        IEnumerable<Company> GetByids(IEnumerable<Guid > ids, bool trackChanges);
+
+        
+
     }
 }

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Service
 {
@@ -83,6 +84,47 @@ namespace Service
             var companyToReturn = _mapper.Map<CompanyDto>(companyEntity);
             return companyToReturn;
 
+        }
+
+        //read once more why need below to methods
+        public IEnumerable<CompanyDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
+        {
+            if (ids == null)
+                throw new IdParametersBadRequestException();
+
+            var companyEntities = _repository.Company.GetByids(ids, trackChanges);
+            if (ids.Count() != companyEntities.Count())
+                throw new CollectionByIdsBadRequestException();
+
+            var compnaiesToReturn  = _mapper.Map<IEnumerable<CompanyDto>>(companyEntities);
+            return compnaiesToReturn;
+        }
+
+        public (IEnumerable<CompanyDto> companies, string ids) CreateCompanyCollection(IEnumerable<CompanyForCreationDto> companyCollection)
+
+        {
+            // we check if our collection is null and if it is, we return a bad request. 
+            if (companyCollection is null)
+                throw new CompanyCollectionBadRequest();
+
+            //If it isn’t, then we map that collection and save all the collection elements 
+           
+                        var companyEntities = _mapper.Map<IEnumerable<Company>>(companyCollection);
+            foreach (var company in companyEntities)
+            {
+                _repository.Company.CreateCompany(company);
+            }
+
+            _repository.Save();
+
+            // Finally, we map the company collection back, take all the
+            // ids as a comma - separated string, and return the Tuple with these two fields as a result to the caller.
+
+            var companyCollectionToReturn = _mapper.Map<IEnumerable<CompanyDto>>(companyEntities);
+
+            var Ids = string.Join(",", companyCollectionToReturn.Select(c => c.Id));
+
+            return (companies: companyCollectionToReturn,ids : Ids);
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CompanyEmployees.Presentation.ModelBinders;
 
 namespace CompanyEmployees.Presentation.Controllers
 {
@@ -46,6 +47,28 @@ namespace CompanyEmployees.Presentation.Controllers
 
             return CreatedAtRoute("CompanyById", new { id = createdCompany.Id },
             createdCompany);
+        }
+
+
+        // check why we need this requests once more
+
+        [HttpGet("collection/({ids})", Name = "CompanyCollection")]
+        public IActionResult GetCompanyCollection([ModelBinder(BinderType = typeof(ArrayModelBinder))] IEnumerable<Guid> ids)
+
+        {
+            var companies = _services.CompanyService.GetByIds(ids,trackChanges: false);
+
+            return Ok(companies);
+        }
+
+
+        [HttpPost("collection")]
+        public IActionResult CreateCompanyCollection([FromBody] IEnumerable<CompanyForCreationDto> companyCollection)
+
+        {
+            var result = _services.CompanyService.CreateCompanyCollection(companyCollection);
+            return CreatedAtRoute("CompanyCollection", new { result.ids },
+            result.companies);
         }
     }
 }
