@@ -28,29 +28,29 @@ namespace Service
 
         
 
-        public IEnumerable<EmployeeDto> GetEmployees(Guid companyId, bool trackChnages)
+        public async Task<IEnumerable<EmployeeDto>> GetEmployeesAsync(Guid companyId, bool trackChnages)
         {
-            var company = _repository.Company.GetCompany(companyId, trackChnages);
+            var company = _repository.Company.GetCompanyAsync(companyId, trackChnages);
             if (company == null)
             {
                 throw new CompanyNotFoundException(companyId);
             }
-            var employeesFromDb = _repository.Employee.GetEmployees(companyId, trackChnages);
+            var employeesFromDb = await _repository.Employee.GetEmployeesAsync(companyId, trackChnages);
 
             var employeeDto = _mapper.Map<IEnumerable<EmployeeDto>>(employeesFromDb);
             return employeeDto;
 
         }
 
-        public EmployeeDto GetEmployee(Guid companyId, Guid Id, bool trackChanges)
+        public async Task<EmployeeDto> GetEmployeeAsync(Guid companyId, Guid Id, bool trackChanges)
         {
-            var company = _repository.Company.GetCompany(companyId, trackChanges);
+            var company = _repository.Company.GetCompanyAsync(companyId, trackChanges);
             if (company == null)
             {
                 throw new CompanyNotFoundException(companyId);
             }
 
-            var employeeDb = _repository.Employee.GetEmployee(companyId,Id, trackChanges);
+            var employeeDb = await _repository.Employee.GetEmployeeAsync(companyId, Id, trackChanges);
             if(employeeDb == null)
             {
                 throw new EmployeeNotFoundException(Id);
@@ -61,9 +61,9 @@ namespace Service
           
         }
 
-        public EmployeeDto CreateEmployeeForCompany(Guid companyId, EmployeeForCreationDto employeeForCreation, bool trackChanges)
+        public async Task<EmployeeDto> CreateEmployeeForCompanyAsync(Guid companyId, EmployeeForCreationDto employeeForCreation, bool trackChanges)
         {
-            var company = _repository.Company.GetCompany(companyId, trackChanges);
+            var company = _repository.Company.GetCompanyAsync(companyId, trackChanges);
             if(company == null)
             {
                 throw new CompanyNotFoundException(companyId);
@@ -71,47 +71,64 @@ namespace Service
 
             var employeeEntity = _mapper.Map<Employee>(employeeForCreation);   //mapping Dto to an entity
             _repository.Employee.CreateEmployeeForCompany(companyId , employeeEntity); // call the repo method to creatre new employee
-            _repository.Save();
+           await _repository.SaveAsync();
 
             var employeeToReturn = _mapper.Map<EmployeeDto>(employeeEntity); // map back the entity to Dto 
             return employeeToReturn;
         }
 
-        public void DeleteEmployeeForCompany(Guid companyId, Guid id, bool trackChanges)
-        {
-            var company = _repository.Company.GetCompany(companyId, trackChanges);
-            if (company is null)
-                throw new CompanyNotFoundException(companyId);
-
-            var employeeForCompany = _repository.Employee.GetEmployee(companyId, id, trackChanges);
-
-            if (employeeForCompany is null)
-                throw new EmployeeNotFoundException(id);
-
-            _repository.Employee.DeleteEmployee(employeeForCompany);
-            _repository.Save();
-        }
+        
 
 
         //update 
-        public void UpdateEmployeeForCompany(Guid companyId, Guid id, EmployeeForUpdateDto employeeForUpdate, bool compTrackChanges, bool empTrackChanges)
 
-
+        public void UpdateEmployeeForCompany(Guid companyId, Guid id, EmployeeForUpdateDto employeeForUpdate, bool compTrackChange, bool empTrackChanges)
         {
-            var company = _repository.Company.GetCompany(companyId, compTrackChanges);
+
+            var company = _repository.Company.GetCompanyAsync(companyId, compTrackChange);
             if (company is null)
                 throw new CompanyNotFoundException(companyId);
 
-            var employeeEntity = _repository.Employee.GetEmployee(companyId, id, empTrackChanges);
+            var employeeEntity = _repository.Employee.GetEmployeeAsync(companyId, id, empTrackChanges);
 
 
             if (employeeEntity is null)
                 throw new EmployeeNotFoundException(id);
 
             _mapper.Map(employeeForUpdate, employeeEntity);
-            _repository.Save();
+            _repository.SaveAsync();
         }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+       /* public void DeleteEmployeeForCompany(Guid companyId, Guid id, bool trackChanges)
+        {
+            var company = _repository.Company.GetCompanyAsync(companyId, trackChanges);
+            if (company is null)
+                throw new CompanyNotFoundException(companyId);
 
+            var employeeForCompany = _repository.Employee.GetEmployeeAsync(companyId, id, trackChanges);
+
+            if (employeeForCompany is null)
+                throw new EmployeeNotFoundException(id);
+
+            //  _repository.Employee.DeleteEmployee(employeeForCompany);
+            _repository.Employee.DeleteEmployee(employeeForCompany);
+             _repository.Save();
+        }*/
+
+        public async void DeleteEmployeeForCompany(Guid companyId, Guid id, bool trackChanges)
+        {
+            var company = await _repository.Company.GetCompanyAsync(companyId, trackChanges);
+            if (company is null)
+                throw new CompanyNotFoundException(companyId);
+
+            var employeeForCompany = await _repository.Employee.GetEmployeeAsync(companyId, id, trackChanges);
+
+            if (employeeForCompany is null)
+                throw new EmployeeNotFoundException(id);
+
+            _repository.Employee.DeleteEmployee(employeeForCompany);
+            await _repository.SaveAsync(); // Assuming SaveAsync is an asynchronous method
+        }
     }
 
 

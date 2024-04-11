@@ -91,3 +91,4 @@ C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Shared.dll
 C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Shared.pdb
 C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Marvin.Cache.Headers.dll

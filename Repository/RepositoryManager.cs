@@ -35,6 +35,6 @@ namespace Repository
        // IEmployeeRepository IRepositoryManager.Employee => throw new NotImplementedException();
 
         // Save method to persist changes to the database using the RepositoryContext
-        public void Save() => _repositoryContext.SaveChanges();
+        public async Task  SaveAsync() => await _repositoryContext.SaveChangesAsync();
     }
 }

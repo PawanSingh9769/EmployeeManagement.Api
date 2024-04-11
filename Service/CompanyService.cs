@@ -35,12 +35,14 @@ namespace Service
             _mapper = mapper;
         }
 
-        
+
 
         /* We are using our repository manager to call the GetAllCompanies
           method from the CompanyRepository class and return all the companies
           from the database.*/
-        public IEnumerable<CompanyDto> GetAllCompanies(bool trackChanges)
+
+        //GetAllCompaniesAsync
+        public async Task<IEnumerable<CompanyDto>> GetAllCompaniesAsync(bool trackChanges)
         {
             //Manually mapping 
             //var companiesDto = companies.Select(c =>  
@@ -48,15 +50,15 @@ namespace Service
             // c.Address, c.Country))) .ToList();
 
             //Automatic mapping using auto mapper
-            var companies = _repository.Company.GetAllCompanies(trackChanges);
+            var companies = await _repository.Company.GetAllCompaniesAsync(trackChanges);
             var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);
             return companiesDto;
 
         }
-
-        public CompanyDto GetCompany(Guid CompanyId, bool trackChanges)
+        //GetCompanyAsync
+        public async Task<CompanyDto> GetCompanyAsync(Guid CompanyId, bool trackChanges)
         {
-            var company = _repository.Company.GetCompany(CompanyId, trackChanges);
+            var company = await _repository.Company.GetCompanyAsync(CompanyId, trackChanges);
             
             if(company == null)
             {
@@ -68,8 +70,8 @@ namespace Service
             return companyDto;
         }
 
-
-        public CompanyDto CreateCompany(CompanyForCreationDto company)
+        //CreateCompanyAsync
+        public async Task<CompanyDto> CreateCompanyAsync(CompanyForCreationDto company)
         {
             /*
              *        Here, we map the company for creation to the company entity, call the 
@@ -80,27 +82,31 @@ namespace Service
              */
             var companyEntity = _mapper.Map<Company>(company);
             _repository.Company.CreateCompany(companyEntity);
-            _repository.Save();
+           await  _repository.SaveAsync();
             var companyToReturn = _mapper.Map<CompanyDto>(companyEntity);
             return companyToReturn;
 
         }
 
         //read once more why need below to methods
-        public IEnumerable<CompanyDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
+        //GetByIds
+        public async Task<IEnumerable<CompanyDto>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges)
         {
             if (ids == null)
                 throw new IdParametersBadRequestException();
 
-            var companyEntities = _repository.Company.GetByids(ids, trackChanges);
+            var companyEntities = await _repository.Company.GetByidsAsync(ids, trackChanges);
             if (ids.Count() != companyEntities.Count())
                 throw new CollectionByIdsBadRequestException();
 
             var compnaiesToReturn  = _mapper.Map<IEnumerable<CompanyDto>>(companyEntities);
             return compnaiesToReturn;
         }
+        
 
-        public (IEnumerable<CompanyDto> companies, string ids) CreateCompanyCollection(IEnumerable<CompanyForCreationDto> companyCollection)
+
+        //CreateCompanyCollection
+        public async Task<(IEnumerable<CompanyDto> companies, string ids)> CreateCompanyCollectionAsync(IEnumerable<CompanyForCreationDto> companyCollection)
 
         {
             // we check if our collection is null and if it is, we return a bad request. 
@@ -115,7 +121,7 @@ namespace Service
                 _repository.Company.CreateCompany(company);
             }
 
-            _repository.Save();
+           await _repository.SaveAsync();
 
             // Finally, we map the company collection back, take all the
             // ids as a comma - separated string, and return the Tuple with these two fields as a result to the caller.

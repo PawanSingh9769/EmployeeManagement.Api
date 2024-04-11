@@ -1,7 +1,9 @@
 using AutoMapper;
+using CompanyEmployees.ActionFilters;
 using CompanyEmployees.Extensions;
 using Contracts;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Routing;
 using NLog;
 using NLog.Config;
@@ -23,13 +25,14 @@ builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(Program));
-
+builder.Services.AddResponseCaching();
+builder.Services.ConfigureHttpCacheHeaders();
 //Without this code, our API wouldn’t work, and wouldn’t know where to 
 //route incoming requests. But now, our app will find all of the controllers 
-builder.Services.AddControllers().AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly); 
+builder.Services.AddControllers().AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly);
 //inside of the Presentation project and configure them with the 
 //framework.
-
+builder.Services.AddScoped<ValidationFilterAttribute>();
 builder.Services.AddControllers();
 
 
@@ -54,6 +57,8 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 });
 
 app.UseCors("CorsPolicy");
+app.UseResponseCaching();
+app.UseHttpCacheHeaders();
 
 app.UseAuthorization();
 

@@ -21,23 +21,23 @@ namespace CompanyEmployees.Presentation.Controllers
         }
 
 
-        // As you can see, we have the
-        // companyId parameter in our action and this parameter will be mapped
-       //  from the main route. For that reason, we didn’t place it in the[HttpGet]
+           // As you can see, we have the
+          // companyId parameter in our action and this parameter will be mapped
+         //  from the main route. For that reason, we didn’t place it in the[HttpGet]
         // attribute as we did with the GetCompany action
         [HttpGet]
-        public IActionResult GetEmployeeForCompany(Guid companyId)
+        public async Task<IActionResult> GetEmployeeForCompanyAsync(Guid companyId)
         {
-            var employees = _serviceManager.EmployeeService.GetEmployees(companyId,trackChanges:false);
+            var employees = await _serviceManager.EmployeeService.GetEmployeesAsync(companyId,trackChanges:false);
 
             return Ok(employees);
         }
 
 
         [HttpGet("{id:guid}", Name = "GetEmployeeForCompany")]
-        public IActionResult GetEmployee(Guid companyId , Guid Id)
+        public async Task<IActionResult> GetEmployeeAsync(Guid companyId , Guid Id)
         {
-            var employee = _serviceManager.EmployeeService.GetEmployee(companyId, Id, trackChanges: false)
+            var employee = await _serviceManager.EmployeeService.GetEmployeeAsync(companyId, Id, trackChanges: false)
 ;
             return Ok(employee);
 
@@ -46,14 +46,14 @@ namespace CompanyEmployees.Presentation.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateEmployeeForCompany(Guid companyId, [FromBody] EmployeeForCreationDto employee)
+        public async Task<IActionResult> CreateEmployeeForCompanyAsync(Guid companyId, [FromBody] EmployeeForCreationDto employee)
 
         {
             if (employee is null)
                 return BadRequest("EmployeeForCreationDto object is null");
 
             var employeeToReturn =
-           _serviceManager.EmployeeService.CreateEmployeeForCompany(companyId, employee, trackChanges: false);
+           await _serviceManager.EmployeeService.CreateEmployeeForCompanyAsync(companyId, employee, trackChanges: false);
 
 
             return CreatedAtRoute("GetEmployeeForCompany", new
@@ -67,7 +67,7 @@ namespace CompanyEmployees.Presentation.Controllers
 
         //Delete Employee
         [HttpDelete("{id:guid}")]
-        public IActionResult DeleteEmployeeForCompany(Guid companyId, Guid id)
+        public  IActionResult DeleteEmployeeForCompanyAsync(Guid companyId, Guid id)
         {
             _serviceManager.EmployeeService.DeleteEmployeeForCompany(companyId, id, trackChanges:
             false);
@@ -76,17 +76,22 @@ namespace CompanyEmployees.Presentation.Controllers
 
 
         //updateEmployee
-        [HttpPut("{id:guid}")] 
-            public IActionResult UpdateEmployeeForCompany(Guid companyId, Guid id, [FromBody] EmployeeForUpdateDto employee)
+        [HttpPut("{id:guid}")]
+        public IActionResult UpdateEmployeeForCompanyAsync(Guid companyId, Guid id, [FromBody] EmployeeForUpdateDto employee)
 
-            {
-                if (employee is null)
+        {
+            if (employee is null)
                 return BadRequest("EmployeeForUpdateDto object is null");
 
-               _serviceManager.EmployeeService.UpdateEmployeeForCompany(companyId, id, employee, compTrackChange: false, empTrackChanges: true);
+            if (!ModelState.IsValid)
+                return UnprocessableEntity(ModelState);
 
-               return NoContent();
-            }
+            _serviceManager.EmployeeService.UpdateEmployeeForCompany(companyId, id, employee, compTrackChange: false, empTrackChanges: true);
+
+            return NoContent();
+        }
+
 
     }
 }
+  
