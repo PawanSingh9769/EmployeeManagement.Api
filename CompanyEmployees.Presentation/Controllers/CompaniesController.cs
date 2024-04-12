@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CompanyEmployees.Presentation.ModelBinders;
 using Marvin.Cache.Headers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CompanyEmployees.Presentation.Controllers
 {
@@ -22,7 +23,7 @@ namespace CompanyEmployees.Presentation.Controllers
         }
 
         [HttpGet]                                          //decorating GetCompanies action with HTTP Get attribute
-        
+        [Authorize]
         public async Task<IActionResult> GetCompaniesAsync()               // IActionResult which return not only the result but also status code
         {
 

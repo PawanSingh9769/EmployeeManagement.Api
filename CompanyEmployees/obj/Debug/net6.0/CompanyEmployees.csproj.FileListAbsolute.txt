@@ -92,3 +92,14 @@ C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Shared.pdb
 C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Marvin.Cache.Headers.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\pawan\Desktop\Asp.net core\CompanyEmployees\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
