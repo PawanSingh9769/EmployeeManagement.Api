@@ -23,7 +23,7 @@ namespace CompanyEmployees.Presentation.Controllers
         }
 
         [HttpGet]                                          //decorating GetCompanies action with HTTP Get attribute
-        [Authorize]
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> GetCompaniesAsync()               // IActionResult which return not only the result but also status code
         {
 
