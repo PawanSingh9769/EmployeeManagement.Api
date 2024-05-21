@@ -30,7 +30,7 @@ namespace Service
 
         public async Task<IEnumerable<EmployeeDto>> GetEmployeesAsync(Guid companyId, bool trackChnages)
         {
-            var company = _repository.Company.GetCompanyAsync(companyId, trackChnages);
+            var company = await _repository.Company.GetCompanyAsync(companyId, trackChnages);
             if (company == null)
             {
                 throw new CompanyNotFoundException(companyId);

@@ -76,5 +76,18 @@ namespace CompanyEmployees.Presentation.Controllers
             return CreatedAtRoute("CompanyCollection", new { result.ids },
             result.companies);
         }
+
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> UpdateCompany(Guid id, [FromBody] CompanyForUpdateDto company)
+
+        {
+            if (company is null)
+                return BadRequest("CompanyForUpdateDto object is null");
+
+            await _services.CompanyService.UpdateCompanyAsync(id, company, trackChanges:
+           true);
+
+            return NoContent();
+        }
     }
 }

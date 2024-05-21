@@ -23,5 +23,7 @@ namespace Service.Contracts
         //new method will accept the collection of companyForCreatingDto type as parameter 
         //return a tuple with two field as a result.
        Task< (IEnumerable<CompanyDto> companies, string ids)> CreateCompanyCollectionAsync(IEnumerable<CompanyForCreationDto> companyCollection);
+        Task UpdateCompanyAsync(Guid companyid, CompanyForUpdateDto companyForUpdate,
+bool trackChanges);
     }
 }

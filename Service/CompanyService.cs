@@ -132,5 +132,16 @@ namespace Service
 
             return (companies: companyCollectionToReturn,ids : Ids);
         }
+
+        public async Task UpdateCompanyAsync(Guid companyId, CompanyForUpdateDto companyForUpdate, bool trackChanges)
+
+        {
+            var companyEntity = await _repository.Company.GetCompanyAsync(companyId,
+            trackChanges);
+            if (companyEntity is null)
+                throw new CompanyNotFoundException(companyId);
+            _mapper.Map(companyForUpdate, companyEntity);
+            await _repository.SaveAsync();
+        }
     }
 }
